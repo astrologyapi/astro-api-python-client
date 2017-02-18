@@ -71,7 +71,7 @@ How to Use
 			                        'latitude': 25.123,
 			                        'longitude': 82.34,
 			                        'timezone': 5.5
-			                    };
+			                    }
 
 			                    maleData = {
 
@@ -83,7 +83,7 @@ How to Use
 			                        'latitude': 25.123,
 			                        'longitude': 82.34,
 			                        'timezone': 5.5
-			                    };
+			                    }
 			    ```
 			Run matchmaking.py file to run Vedic Rishi Match Making APIs.
 			For API documentation, visit - https://www.vedicrishiastro.com/astro-api/docs/
