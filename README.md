@@ -6,7 +6,7 @@ This is Python client to consume Astrology APIs
 Where to get API Key
 ====================
 
-You can visit https://www.vedicrishiastro.com/astro-api/ to get the astrology API key to be used for your websites or
+You can visit https://www.astrologyapi.com/ to get the astrology API key to be used for your websites or
 mobile applications.
 
 How to Use
@@ -18,7 +18,7 @@ How to Use
     clientInstance = VRClient(userID, apiKey)
     ```
     Replace ``` userID ``` and ``` apiKey``` with your id and keys respectively.
-    You can get the API key details from https://www.vedicrishiastro.com/astro-api/
+    You can get the API key details from https://www.astrologyapi.com/
 
 3. Call the api
     ```
@@ -86,5 +86,5 @@ How to Use
 			                    }
 			    ```
 			Run matchmaking.py file to run Vedic Rishi Match Making APIs.
-			For API documentation, visit - https://www.vedicrishiastro.com/astro-api/docs/
+			For API documentation, visit - https://www.astrologyapi.com/docs/
 			
