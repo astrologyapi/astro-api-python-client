@@ -59,8 +59,8 @@ class VRClient:
             'f_lon': femaleBirthData['longitude'],
             'f_tzone': femaleBirthData['timezone']
         }
-        
-        return mData.extend(fData)
+        tempData = dict(mData.items() + fData.items())
+        return tempData
     
     def call(self, resource, date, month, year, hour, minute, latitude, longitude, timezone):
 	    data = self.packageHoroData(date, month, year, hour, minute, latitude, longitude, timezone)
