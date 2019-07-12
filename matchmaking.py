@@ -1,7 +1,7 @@
 import sdk
 
-userID = "<YourUserIdhere>";
-apiKey = "<YourApiKeyHere>";
+userID = "<YourUserIdhere>"
+apiKey = "<YourApiKeyHere>"
 
 # create a male profile data
 maleData = {
@@ -29,11 +29,13 @@ femaleData = {
 # match making api to be called
 resource = "match_ashtakoot_points"
 
-#create instance of VRClient
-ritesh = sdk.VRClient(userID,apiKey)
+# create instance of VRClient
+
+client = sdk.VRClient(userID, apiKey)
 
 # call matchMakingCall method of VRClient for matching apis
-matchMakingData = ritesh.matchMakingCall(resource, maleData, femaleData)
+matchMakingData = client.matchMakingCall(resource, maleData, femaleData)
 
 # print response data recieved from api
 print(matchMakingData)
+

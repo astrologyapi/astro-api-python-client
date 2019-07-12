@@ -16,7 +16,7 @@ resource = 'numero_table'
 vedicRishi = sdk.VRClient(userID, apiKey)
 
 # call numerology method of the VRClient
-numeroData = vedicRishi.numeroCall(resource, dateOfBirth, monthOfBirth, yearOfBirth, name);
+numeroData = vedicRishi.numeroCall(resource, dateOfBirth, monthOfBirth, yearOfBirth, name)
 
 # printing data
 print(numeroData)
