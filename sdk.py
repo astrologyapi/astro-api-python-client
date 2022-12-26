@@ -1,8 +1,8 @@
 import requests
 
 
-class VRClient:
-    baseURL = "http://api.vedicrishiastro.com/v1/"
+class AstrologyAPIClient:
+    baseURL = "https://json.astrologyapi.com/v1/"
 
     def __init__(self, uid, key):
         self.userID = uid
@@ -27,6 +27,12 @@ class VRClient:
             'lat': latitude,
             'lon': longitude,
             'tzone': timezone
+        }
+    
+    def packageDailyHoroData(self,zodiacName,timezone):
+        return {
+            'zodiacName': zodiacName,
+            'timezone': timezone,
         }
 
     def packageNumeroData(self, date, month, year, name):
@@ -73,3 +79,9 @@ class VRClient:
     def numeroCall(self, resource, date, month, year, name):
         data = self.packageNumeroData(date, month, year, name)
         return self.getResponse(resource, data)
+
+    def dailyHoroCall(self,resource,zodiacName, timezone):
+        data = self.packageDailyHoroData(zodiacName,timezone)
+        return self.getResponse(resource,data)
+
+    

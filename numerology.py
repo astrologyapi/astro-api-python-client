@@ -12,11 +12,11 @@ name = 'Your Name'
 # Numerology APIs which needs to be called
 resource = 'numero_table'
 
-# instantiate VRClient class
-vedicRishi = sdk.VRClient(userID, apiKey)
+# instantiate AstrologyAPIClient class
+astrologyAPI= sdk.AstrologyAPIClient(userID, apiKey)
 
-# call numerology method of the VRClient
-numeroData = vedicRishi.numeroCall(resource, dateOfBirth, monthOfBirth, yearOfBirth, name)
+# call numerology method of the AstrologyAPIClient
+numeroData = astrologyAPI.numeroCall(resource, dateOfBirth, monthOfBirth, yearOfBirth, name)
 
 # printing data
 print(numeroData)

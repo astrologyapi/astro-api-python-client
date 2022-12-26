@@ -4,7 +4,7 @@ import json
 userID = "<USER_ID>"
 apiKey = "<API_KEY>"
 
-# make some dummy data in order to call vedic rishi api
+# make some dummy data in order to call astrology api
 data = {
     'date': 10,
     'month': 12,
@@ -19,8 +19,8 @@ data = {
 # api name which is to be called
 resource = "astro_details"
 
-# instantiate VedicRishiClient class
-client = sdk.VRClient(userID, apiKey)
+# instantiate AstrologyAPIClient class
+client = sdk.AstrologyAPIClient(userID, apiKey)
 
 # call horoscope apis
 responseData = client.call(resource, data['date'], data['month'], data['year'], data['hour'], data['minute'], data['latitude'], data['longitude'], data['timezone'])
