@@ -29,11 +29,11 @@ femaleData = {
 # match making api to be called
 resource = "match_ashtakoot_points"
 
-# create instance of VRClient
+# create instance of AstrologyAPIClient
 
-client = sdk.VRClient(userID, apiKey)
+client = sdk.AstrologyAPIClient(userID, apiKey)
 
-# call matchMakingCall method of VRClient for matching apis
+# call matchMakingCall method of AstrologyAPIClient for matching apis
 matchMakingData = client.matchMakingCall(resource, maleData, femaleData)
 
 # print response data recieved from api
