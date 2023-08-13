@@ -65,7 +65,7 @@ class AstrologyAPIClient:
             'f_lon': femaleBirthData['longitude'],
             'f_tzone': femaleBirthData['timezone']
         }
-        tempData = dict(mData.items() + fData.items())
+        tempData = dict(mData.items() | fData.items())
         return tempData
 
     def call(self, resource, date, month, year, hour, minute, latitude, longitude, timezone):
