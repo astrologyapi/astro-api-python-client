@@ -36,6 +36,9 @@ client = sdk.AstrologyAPIClient(userID, apiKey)
 # call matchMakingCall method of AstrologyAPIClient for matching apis
 matchMakingData = client.matchMakingCall(resource, maleData, femaleData)
 
+
 # print response data recieved from api
-print(matchMakingData)
+loaded_json = json.loads(matchMakingData.text)
+
+print(loaded_json)  # <== prints json response.
 
