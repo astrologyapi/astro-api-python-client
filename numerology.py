@@ -18,5 +18,6 @@ astrologyAPI= sdk.AstrologyAPIClient(userID, apiKey)
 # call numerology method of the AstrologyAPIClient
 numeroData = astrologyAPI.numeroCall(resource, dateOfBirth, monthOfBirth, yearOfBirth, name)
 
-# printing data
-print(numeroData)
+loaded_json = json.loads(numeroData.text)
+
+print(loaded_json)  # <== prints json response.
