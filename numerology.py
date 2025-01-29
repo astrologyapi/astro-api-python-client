@@ -1,8 +1,13 @@
-import sdk
 
+from dotenv import load_dotenv
+import os
+from sdk import AstrologyAPIClient
 
-userID = "<YourUserIdhere>"
-apiKey = "<YourApiKeyHere>"
+# Load environment variables from .env file
+load_dotenv()
+
+userID = os.getenv('ASTROLOGY_API_USER_ID')
+apiKey = os.getenv('ASTROLOGY_API_KEY') 
 
 dateOfBirth = 25
 monthOfBirth = 12
@@ -13,7 +18,7 @@ name = 'Your Name'
 resource = 'numero_table'
 
 # instantiate AstrologyAPIClient class
-astrologyAPI= sdk.AstrologyAPIClient(userID, apiKey)
+astrologyAPI= AstrologyAPIClient(userID, apiKey)
 
 # call numerology method of the AstrologyAPIClient
 numeroData = astrologyAPI.numeroCall(resource, dateOfBirth, monthOfBirth, yearOfBirth, name)

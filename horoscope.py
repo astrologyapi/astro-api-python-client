@@ -1,8 +1,13 @@
-import sdk
+import json
+from dotenv import load_dotenv
+import os
+from sdk import AstrologyAPIClient
 
+# Load environment variables from .env file
+load_dotenv()
 
-userID = "<YourUserIdhere>"
-apiKey = "<YourApiKeyHere>"
+userID = os.getenv('ASTROLOGY_API_USER_ID')
+apiKey = os.getenv('ASTROLOGY_API_KEY') 
 
 # Zodiac sign
 zodiacName = "taurus"
@@ -13,7 +18,7 @@ resource = "sun_sign_prediction/daily/"+zodiacName
 
 
 # instantiate AstrologyAPIClient class
-client = sdk.AstrologyAPIClient(userID, apiKey)
+client = AstrologyAPIClient(userID, apiKey)
 
 
 # call dailyHoroCall method for daily predictions

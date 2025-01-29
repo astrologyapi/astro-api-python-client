@@ -1,8 +1,14 @@
-import sdk
+from dotenv import load_dotenv
+import os
+from sdk import AstrologyAPIClient
 import json
 
-userID = "<USER_ID>"
-apiKey = "<API_KEY>"
+
+# Load environment variables from .env file
+load_dotenv()
+
+userID = os.getenv('ASTROLOGY_API_USER_ID')
+apiKey = os.getenv('ASTROLOGY_API_KEY') 
 
 # make some dummy data in order to call astrology api
 data = {
@@ -20,13 +26,13 @@ data = {
 resource = "astro_details"
 
 # instantiate AstrologyAPIClient class
-client = sdk.AstrologyAPIClient(userID, apiKey)
+client = AstrologyAPIClient(userID, apiKey)
 
 # call horoscope apis
 responseData = client.call(resource, data['date'], data['month'], data['year'], data['hour'], data['minute'], data['latitude'], data['longitude'], data['timezone'])
 
-loaded_json = json.loads(responseData.text)
 
-print(loaded_json)  # <== prints json response.
+print(responseData)  # <== prints json response.
 
-print(loaded_json['ascendant'])  # <== prints single key
+#prints a single key
+print(responseData['ascendant'])

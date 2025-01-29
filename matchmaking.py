@@ -1,7 +1,13 @@
-import sdk
+import json
+from dotenv import load_dotenv
+import os
+from sdk import AstrologyAPIClient
 
-userID = "<YourUserIdhere>"
-apiKey = "<YourApiKeyHere>"
+# Load environment variables from .env file
+load_dotenv()
+
+userID = os.getenv('ASTROLOGY_API_USER_ID')
+apiKey = os.getenv('ASTROLOGY_API_KEY') 
 
 # create a male profile data
 maleData = {
@@ -31,7 +37,7 @@ resource = "match_ashtakoot_points"
 
 # create instance of AstrologyAPIClient
 
-client = sdk.AstrologyAPIClient(userID, apiKey)
+client = AstrologyAPIClient(userID, apiKey)
 
 # call matchMakingCall method of AstrologyAPIClient for matching apis
 matchMakingData = client.matchMakingCall(resource, maleData, femaleData)
