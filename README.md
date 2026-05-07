@@ -24,32 +24,11 @@ pip install astrologyapi
 
 ## Authentication
 
-The SDK supports two authentication methods, which are automatically detected based on the format of your credentials.
-
-### 1. Token-Based Authentication (Recommended)
-If your API key starts with `ak-`, the SDK uses the `x-astrologyapi-key` header.
+The SDK uses token-based authentication via the `x-astrologyapi-key` header.
 
 ```python
 from astrologyapi import AstrologyAPI
 client = AstrologyAPI("ak-your-access-token")
-```
-
-### 2. Basic Authentication
-For legacy credentials consisting of a **User ID** and an **API Key**. You can provide them in `userId:apiKey` format:
-
-```python
-from astrologyapi import AstrologyAPI
-client = AstrologyAPI("123456:your-api-key")
-```
-
-Alternatively, you can set the `ASTROLOGYAPI_USER_ID` environment variable and just pass the API key:
-
-```bash
-export ASTROLOGYAPI_USER_ID="123456"
-```
-
-```python
-client = AstrologyAPI("your-api-key") # Merges with ASTROLOGYAPI_USER_ID
 ```
 
 ## Quick Start
@@ -110,18 +89,13 @@ asyncio.run(main())
 You can also use environment variables to configure the client:
 
 ```bash
-# For Token-Based Auth
 export ASTROLOGYAPI_API_KEY="ak-your-token"
-
-# OR For Basic Auth
-export ASTROLOGYAPI_USER_ID="123456"
-export ASTROLOGYAPI_API_KEY="your-api-key"
 ```
 
 ```python
 from astrologyapi import AstrologyAPI
 
-# Automatically picks up the env vars
+# Automatically picks up the env var
 client = AstrologyAPI.from_env()
 ```
 
